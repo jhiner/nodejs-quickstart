@@ -1,0 +1,24 @@
+extends layout
+
+
+block content
+  h1= title
+  p Welcome to the quickstart demo
+  br
+  button(onclick="signIn()") Login
+
+  script.
+    var auth0 = new Auth0({
+      domain:       '#{env.AUTH0_DOMAIN}',
+      clientID:     '#{env.AUTH0_CLIENT_ID}',
+      callbackURL:  '#{env.AUTH0_CALLBACK_URL}'
+    });
+
+    function signIn() {
+      auth0.login({
+        response_type: 'code',
+        scope: 'openid profile read:todo offline_access',
+        audience: 'http://todoapi2.api',
+        prompt: 'consent'
+      });
+    }
