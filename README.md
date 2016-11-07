@@ -1,4 +1,4 @@
-# ndoejs-quickstart
+# nodejs-quickstart
 
 This is a prototype nodejs quickstart project to demonstrate new OAuth as a service features with Auth0.
 
@@ -8,4 +8,4 @@ Rename .env.eaxmple to .env and update AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUT
 
 ## Running the example
 
-tbd
+Use `npm start` to run the project.

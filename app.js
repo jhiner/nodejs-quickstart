@@ -1,8 +1,8 @@
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// var cookieParser = require('cookie-parser');
+// var bodyParser = require('body-parser');
 var session = require('express-session');
 var dotenv = require('dotenv');
 var passport = require('passport');
@@ -27,6 +27,7 @@ var strategy = new Auth0Strategy({
     console.log('access token: ' + accessToken);
     console.log('refresh token: ' + refreshToken);
     console.log('id token: ' + extraParams.id_token);
+    extraParams.refresh_token = refreshToken;
 
     return done(null, {
       profile: profile,
@@ -56,9 +57,9 @@ app.set('view options', { pretty: true });
 
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(cookieParser());
 app.use(session({
   secret: 'yourSessionSecret',
   resave: true,

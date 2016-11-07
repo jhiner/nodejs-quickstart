@@ -29,6 +29,4 @@ router.get('/echo', ensureLoggedIn, function(req, res, next) {
 
 });
 
-
-
 module.exports = router;
