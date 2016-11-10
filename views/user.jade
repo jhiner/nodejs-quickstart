@@ -18,6 +18,13 @@ block content
     span #{user.extraParams.refresh_token}
   br
   p
-  button(onclick="refreshToken('#{user.extraParams.refresh_token}')") Refresh Tokens
+    strong apicall
+    br
+    span Hey #{apiData}
+  br
+  p
+  a(href='/user/apicall') API Call
+  p
+  a(href='/user/refresh') Refresh
   p
   a(href='/logout') Log Out
